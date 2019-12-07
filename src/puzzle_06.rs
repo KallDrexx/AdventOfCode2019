@@ -1,7 +1,6 @@
 use std::collections::{HashMap, HashSet};
 use std::fs::File;
 use std::io::Read;
-use std::ops::Index;
 
 pub fn run() {
     let input = read_input();
