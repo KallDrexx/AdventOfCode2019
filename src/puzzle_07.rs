@@ -26,7 +26,7 @@ fn run_amps(program: Vec<i32>, phase_settings: Vec<i32>) -> i32 {
 
     let mut amps: Vec<Machine> = (0..phase_settings.len())
         .map(|x| {
-            let mut machine = Machine::new(program.clone());
+            let mut machine = Machine::new_from_memory(program.clone());
             machine.input_buffer.push_front(phase_settings[x]);
             machine
         })

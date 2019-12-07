@@ -1,4 +1,6 @@
 use std::collections::VecDeque;
+use std::fs::File;
+use std::io::Read;
 
 pub struct Machine {
     pub memory: Vec<i32>,
@@ -14,13 +16,27 @@ pub enum MachineState {
 }
 
 impl Machine {
-    pub fn new(memory: Vec<i32>) -> Self {
+    pub fn new_from_memory(memory: Vec<i32>) -> Self {
         Machine {
             memory,
             input_buffer: VecDeque::new(),
             output_buffer: VecDeque::new(),
             instruction_pointer: 0,
         }
+    }
+
+    pub fn new_from_file(filename: &str) -> Self {
+        let mut file = File::open(filename).unwrap();
+        let mut content = String::new();
+        file.read_to_string(&mut content).unwrap();
+
+        let mut memory = Vec::new();
+        for code in content.trim().split(",") {
+            let code_as_int = code.parse::<i32>().unwrap();
+            memory.push(code_as_int);
+        }
+
+        Machine::new_from_memory(memory)
     }
     
     pub fn run_program(&mut self) -> MachineState {
