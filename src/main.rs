@@ -9,7 +9,8 @@ mod puzzle_05;
 mod puzzle_06;
 mod puzzle_07;
 mod puzzle_08;
+mod puzzle_09;
 
 fn main() {
-    puzzle_08::run();
+    puzzle_09::run();
 }

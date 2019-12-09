@@ -20,7 +20,7 @@ pub fn run() {
     println!("Final signal: {}", max_signal);
 }
 
-fn run_amps(program: Vec<i32>, phase_settings: Vec<i32>) -> i32 {
+fn run_amps(program: Vec<i128>, phase_settings: Vec<i128>) -> i128 {
     let signal;
     let mut amp_index = 0;
 
@@ -69,21 +69,21 @@ fn run_amps(program: Vec<i32>, phase_settings: Vec<i32>) -> i32 {
     signal
 }
 
-fn read_initial_memory() -> Vec<i32> {
+fn read_initial_memory() -> Vec<i128> {
     let mut file = File::open("src/inputs/07A.txt").unwrap();
     let mut content = String::new();
     file.read_to_string(&mut content).unwrap();
 
     let mut output = Vec::new();
     for code in content.trim().split(",") {
-        let code_as_int = code.parse::<i32>().unwrap();
+        let code_as_int = code.parse::<i128>().unwrap();
         output.push(code_as_int);
     }
 
     output
 }
 
-fn get_permutations(initial: &Vec<i32>, item_index: usize) -> Vec<Vec<i32>> {
+fn get_permutations(initial: &Vec<i128>, item_index: usize) -> Vec<Vec<i128>> {
     let mut results = Vec::new();
 
     if item_index < initial.len() {
