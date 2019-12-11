@@ -44,7 +44,7 @@ impl Machine {
     pub fn run_program(&mut self) -> MachineState {
         loop {
             let instruction = parse_instruction(self.memory[self.instruction_pointer]);
-            println!("{:?}", instruction);
+            //println!("{:?}", instruction);
             match &instruction.op_code {
                 1 => {
                     // Add
@@ -92,7 +92,7 @@ impl Machine {
 
                     //println!("Input: {}", input);
                     let mut output_address = self.memory[self.instruction_pointer + 1];
-                    println!("Original Address {}, base: {}", output_address, self.relative_base);
+                    //println!("Original Address {}, base: {}", output_address, self.relative_base);
 
                     if instruction.param1_mode == ParameterMode::Relative {
                         output_address = self.relative_base + output_address;
@@ -181,7 +181,7 @@ impl Machine {
                     let param_val = self.memory[self.instruction_pointer + 1];
                     let change = self.read_param_value(param_val, &instruction.param1_mode);
 
-                    println!("Relative base change by {} + {} = {}", self.relative_base, change, self.relative_base + change);
+                    //println!("Relative base change by {} + {} = {}", self.relative_base, change, self.relative_base + change);
 
                     self.relative_base = self.relative_base + change;
                     self.instruction_pointer = self.instruction_pointer + 2;
