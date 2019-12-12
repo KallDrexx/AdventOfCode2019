@@ -1,5 +1,7 @@
 #![allow(dead_code)]
 
+extern crate regex;
+
 mod intcode;
 mod puzzle_01;
 mod puzzle_02;
@@ -12,7 +14,8 @@ mod puzzle_08;
 mod puzzle_09;
 mod puzzle_10;
 mod puzzle_11;
+mod puzzle_12;
 
 fn main() {
-    puzzle_11::run();
+    puzzle_12::run();
 }
