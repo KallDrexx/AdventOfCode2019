@@ -10,7 +10,7 @@ pub struct Machine {
     relative_base: i128,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Eq, PartialEq)]
 pub enum MachineState {
     WaitingForInput,
     Halted,
