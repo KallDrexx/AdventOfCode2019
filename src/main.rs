@@ -17,7 +17,8 @@ mod puzzle_10;
 mod puzzle_11;
 mod puzzle_12;
 mod puzzle_13;
+mod puzzle_14;
 
 fn main() {
-    puzzle_13::run();
+    puzzle_14::run();
 }
