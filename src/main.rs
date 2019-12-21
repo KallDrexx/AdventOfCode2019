@@ -20,8 +20,8 @@ mod puzzle_13;
 mod puzzle_14;
 mod puzzle_15;
 mod puzzle_16;
-mod puzzle_17;
+mod puzzle_18;
 
 fn main() {
-    puzzle_17::run();
+    puzzle_18::run();
 }
