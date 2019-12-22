@@ -2,6 +2,10 @@
 
 extern crate regex;
 extern crate console;
+extern crate num_format;
+
+use std::time::SystemTime;
+use num_format::{Locale, ToFormattedString};
 
 mod intcode;
 mod puzzle_01;
@@ -23,5 +27,10 @@ mod puzzle_16;
 mod puzzle_18;
 
 fn main() {
+    let now = SystemTime::now();
     puzzle_18::run();
+
+    let elapsed = now.elapsed().unwrap();
+    let elapsted_ms = elapsed.as_millis();
+    println!("Run completed in {}ms", elapsted_ms.to_formatted_string(&Locale::en));
 }
