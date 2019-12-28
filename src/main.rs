@@ -25,10 +25,12 @@ mod puzzle_14;
 mod puzzle_15;
 mod puzzle_16;
 mod puzzle_18;
+mod puzzle_19;
 
 fn main() {
     let now = SystemTime::now();
-    puzzle_18::run();
+
+    puzzle_19::run();
 
     let elapsed = now.elapsed().unwrap();
     let elapsted_ms = elapsed.as_millis();
